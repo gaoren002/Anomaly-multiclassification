@@ -1,0 +1,75 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: run_patchcore",
+            "type": "python",
+            "request": "launch",
+            "args": [
+                "--gpu",
+                "0",
+                "--seed",
+                "1",
+                "--save_patchcore_model",
+                "--log_group",
+                "IM224_WR50_L2-3_P01_D1024-1024_PS-3_AN-1_S0",
+                "--log_project",
+                "MVTecAD_Results",
+                "results",  // results_path
+                "patch_core",
+                "-b",
+                "resnet50",
+                "-le",
+                "layer2",
+                "-le",
+                "layer3",
+                "--faiss_on_gpu",
+                "--pretrain_embed_dimension",
+                "1024",
+                "--target_embed_dimension",
+                "1024",
+                "--anomaly_scorer_num_nn",
+                "1",
+                "--patchsize",
+                "3",
+                "sampler",
+                "-p",
+                "0.1",
+                "approx_greedy_coreset",  // sampler的name
+                "dataset",
+                "-d",
+                "transistor",
+                "--resize",
+                "256",
+                "--imagesize",
+                "224",
+                "mvtec",  //  name
+                "./mvtec_anomaly_detection", // data_path
+                "pretrain_dataset",
+                "-d",
+                "transistor",
+                "--resize",
+                "256",
+                "--imagesize",
+                "224",
+                "generated_mvtec",
+                "./generate_anomaly_pkg/sythesized_anomaly", // data_path
+                "./mvtec_anomaly_detection" //ori_data_path
+            ],
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
