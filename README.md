@@ -58,10 +58,7 @@ Then you can run "generate_foreground.py" and "generate_foreground copy.py" resp
 ### Training
 run ./bin/run_patchcore.py with "run_patchcore"
 
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache2.0 License.
